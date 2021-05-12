@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GBReference</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="banner">
+        <h1>GBReference</h1>
+        <h4>符合《信息与文献 参考文献著录规则》（GB/T 7714-2015）规范要求</h4>
+        <a href="https://github.com/z0gSh1u/GBReference" target="_blank"
+          >https://github.com/z0gSh1u/GBReference</a
+        >
+        <br /><br />
+      </div>
+      <div class="btns">
+        <button class="btn btn-default" id="M-trigger">普通图书[M]</button>
+        <button class="btn btn-default" id="C-trigger">会议录[C]</button>
+        <button class="btn btn-default" id="J-trigger">期刊[J]</button>
+        <button class="btn btn-default" id="D-trigger">学位论文[D]</button>
+        <button class="btn btn-default" id="P-trigger">专利[P]</button>
+        <button class="btn btn-default" id="R-trigger">
+          电子资源（报告）[R]
+        </button>
+      </div>
+
+      <div class="templates" id="templates"></div>
+
+      <table class="table">
+        <thead>
+          <th>Temp Id</th>
+          <th>Content</th>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <button class="btn btn-primary" id="btn-generate">生成</button>
+      <br />
+      <br />
+      <textarea id="output" rows="6"></textarea>
+    </div>
+  </body>
+  <script src="./GBReference.js"></script>
+</html>
