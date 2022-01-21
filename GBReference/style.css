@@ -1,5 +1,25 @@
-#container {
-  padding: 15px 30px;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url('bgimg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#panel {
+  float: left;
+  width: 60%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 5px 10px;
+  border-right: 2px dotted gray;
+}
+#detail {
+  float: right;
+  width: 40%;
+  padding: 5px 10px;
 }
 .templates {
   margin: 10px;
