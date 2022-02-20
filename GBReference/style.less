@@ -10,6 +10,10 @@ body {
   background-size: cover;
 }
 
+.banner {
+  padding: 0.5rem 1.5rem;
+}
+
 #panel {
   float: left;
   width: 60%;
@@ -17,6 +21,14 @@ body {
   overflow-y: scroll;
   padding: 5px 10px;
   border-right: 2px dotted gray;
+}
+
+.tail {
+  width: 100%;
+  text-align: right;
+  line-height: 1rem;
+  font-size: 12px;
+  margin: 1rem;
 }
 
 #detail {
@@ -37,7 +49,18 @@ span.hint {
   margin-bottom: 7px;
 }
 
-#output {
+.output {
   width: 100%;
   resize: none;
+}
+
+.myTemplateRoot {
+  padding: 1rem;
+  .myInputGroup {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .myOKBtn {
+    margin-top: 1rem;
+  }
 }

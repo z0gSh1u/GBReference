@@ -4,39 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GBReference [ /// 维护中 /// ]</title>
+    <title>
+      GBReference - 生成基本符合《信息与文献
+      参考文献著录规则》（GB/T7714-2015）的引用列表
+    </title>
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="panel">
       <div class="banner">
-        <h1>GBReference [ /// 维护中 /// ]</h1>
-        <h4>符合《信息与文献 参考文献著录规则》（GB/T 7714-2015）规范要求</h4>
-        <a href="https://github.com/z0gSh1u/GBReference" target="_blank"
-          >github.com/z0gSh1u/GBReference</a
-        >
-        <br /><br />
+        <h1>GBReference</h1>
+        <h4>
+          生成基本符合《信息与文献 参考文献著录规则》（GB/T
+          7714-2015）的引用列表
+        </h4>
+        <br />
       </div>
-
-      <table class="table" id='mytable'>
+      <table class="table" id="暂存表">
         <thead>
-          <th>操作</th>
-          <th>临时编号</th>
+          <th width="100px">操作</th>
+          <th width="50px">序号</th>
+          <th width="50px">编号</th>
           <th>内容</th>
         </thead>
-        <tbody id="table-body"></tbody>
+        <tbody id="暂存表表身"></tbody>
       </table>
-      <button class="btn btn-primary" id="btn-generate">生成</button>
+      <button class="btn btn-primary" id="生成按钮">生成</button>
+      <button class="btn btn-danger" id="清空按钮">清空</button>
+      <button class="btn btn-success" id="读取按钮">读取</button>
+      <button class="btn btn-warning" id="暂存按钮">暂存</button>
       <br />
       <br />
-      <textarea id="output" rows="6"></textarea>
+      <textarea id="输出框" class="output" rows="8"></textarea>
+      <div class="tail">
+        <p>静态页面部署使用 GitHub Pages. 背景图来自琉璃神社壁纸包.</p>
+        <span>源码：</span>
+        <a href="https://github.com/z0gSh1u/GBReference" target="_blank"
+          >https://github.com/z0gSh1u/GBReference</a
+        >
+      </div>
     </div>
+
     <div id="detail">
       <h3>新增</h3>
       <div id="分类按钮们" class="btns"></div>
-
-      <div class="templates" id="templates"></div>
+      <div class="templates" id="模板根元素"></div>
     </div>
   </body>
   <script src="./GBReference.js"></script>
