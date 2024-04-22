@@ -2,7 +2,7 @@
 
 快速生成“符合《信息与文献 参考文献著录规则》（GB/T 7714-2015）规范要求”的参考文献列表
 
-\>\>\> https://zxuuu.tech/GBR
+\>\>\> [https://zxuuu.tech/GBReference/index.html](https://zxuuu.tech/GBReference/index.html)
 
 ## 当前可以
 
