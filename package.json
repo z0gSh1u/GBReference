@@ -1,0 +1,28 @@
+{
+  "name": "gbreference",
+  "version": "1.0.0",
+  "description": "快速生成符合《信息与文献 参考文献著录规则》（GB/T 7714-2015）规范要求的参考文献列表",
+  "main": "GBReference.js",
+  "scripts": {
+    "build:css": "lessc style.less style.css",
+    "watch:css": "lessc style.less style.css --watch",
+    "dev": "npm run build:css && npx serve .",
+    "build": "npm run build:css"
+  },
+  "keywords": [
+    "reference",
+    "citation",
+    "GB/T7714",
+    "学术引用"
+  ],
+  "author": "z0gSh1u",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z0gSh1u/GBReference"
+  },
+  "devDependencies": {
+    "less": "^4.2.0",
+    "serve": "^14.2.0"
+  }
+}

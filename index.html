@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,48 +8,152 @@
       GBReference - 生成基本符合《信息与文献
       参考文献著录规则》（GB/T7714-2015）的引用列表
     </title>
-    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="panel">
-      <div class="banner">
-        <h1>GBReference</h1>
-        <h4>
-          生成基本符合《信息与文献 参考文献著录规则》（GB/T
-          7714-2015）的引用列表
-        </h4>
-        <br />
+    <!-- 导航栏 -->
+    <nav
+      class="navbar navbar-default navbar-static-top"
+      style="
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <strong>GBReference</strong>
+            <small
+              class="text-muted hidden-xs hidden-sm"
+              style="font-size: 12px; margin-left: 10px"
+            >
+              生成基本符合《信息与文献 参考文献著录规则》（GB/T 7714-2015）的引用列表
+            </small>
+          </a>
+        </div>
+        <div class="navbar-right hidden-xs" style="margin-right: 15px">
+          <p class="navbar-text">
+            <a
+              href="https://github.com/z0gSh1u/GBReference"
+              target="_blank"
+              class="navbar-link"
+            >
+              <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+              GitHub
+            </a>
+          </p>
+        </div>
       </div>
-      <table class="table" id="暂存表">
-        <thead>
-          <th width="100px">操作</th>
-          <th width="50px">序号</th>
-          <th width="50px">编号</th>
-          <th>内容</th>
-        </thead>
-        <tbody id="暂存表表身"></tbody>
-      </table>
-      <button class="btn btn-primary" id="生成按钮">生成</button>
-      <button class="btn btn-danger" id="清空按钮">清空</button>
-      <button class="btn btn-success" id="读取按钮">读取</button>
-      <button class="btn btn-warning" id="暂存按钮">暂存</button>
-      <br />
-      <br />
-      <textarea id="输出框" class="output" rows="8"></textarea>
-      <div class="tail">
-        <p>静态页面部署使用 GitHub Pages. 背景图来自琉璃神社壁纸包.</p>
-        <span>源码：</span>
-        <a href="https://github.com/z0gSh1u/GBReference" target="_blank"
-          >https://github.com/z0gSh1u/GBReference</a
-        >
-      </div>
-    </div>
+    </nav>
 
-    <div id="detail">
-      <h3>新增</h3>
-      <div id="分类按钮们" class="btns"></div>
-      <div class="templates" id="模板根元素"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 左侧：引用列表与操作 -->
+        <div class="col-md-7 col-lg-8" id="panel-col">
+          <div class="panel panel-default" id="main-panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                引用列表
+              </h3>
+            </div>
+
+            <table class="table table-hover table-striped" id="暂存表">
+              <thead>
+                <th width="140px">操作</th>
+                <th width="60px">序号</th>
+                <th>内容</th>
+              </thead>
+              <tbody id="暂存表表身"></tbody>
+            </table>
+
+            <div
+              class="panel-body text-center text-muted"
+              id="empty-hint"
+              style="display: none"
+            >
+              暂无记录，请在右侧添加
+            </div>
+
+            <div class="panel-footer" id="main-actions">
+              <button class="btn btn-primary" id="生成按钮">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 生成
+              </button>
+              <button class="btn btn-info" id="复制按钮">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> 复制
+              </button>
+              <div class="btn-group pull-right">
+                <button class="btn btn-warning" id="暂存按钮" title="保存到浏览器缓存">
+                  <span
+                    class="glyphicon glyphicon-floppy-disk"
+                    aria-hidden="true"
+                  ></span>
+                  暂存
+                </button>
+                <button class="btn btn-success" id="读取按钮" title="从浏览器缓存读取">
+                  <span
+                    class="glyphicon glyphicon-folder-open"
+                    aria-hidden="true"
+                  ></span>
+                  读取
+                </button>
+                <button class="btn btn-danger" id="清空按钮" title="清空列表">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  清空
+                </button>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="输出框">生成结果</label>
+            <textarea
+              id="输出框"
+              class="form-control"
+              rows="8"
+              placeholder="点击生成按钮后在此处查看结果..."
+            ></textarea>
+          </div>
+
+          <div class="tail text-center" style="color: #777">
+            <small>静态页面部署使用 GitHub Pages.</small>
+          </div>
+        </div>
+
+        <!-- 右侧：新增引用 -->
+        <div class="col-md-5 col-lg-4" id="detail-col">
+          <div class="panel panel-primary" id="add-panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                新增引用
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div id="分类按钮们" class="btns text-center"></div>
+              <hr />
+              <div class="templates" id="模板根元素">
+                <div class="text-center text-muted" id="模板占位符">
+                  <span
+                    class="glyphicon glyphicon-hand-up"
+                    aria-hidden="true"
+                    style="font-size: 2em; margin-bottom: 10px"
+                  ></span>
+                  <p>请点击上方按钮选择类型</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="./GBReference.js"></script>

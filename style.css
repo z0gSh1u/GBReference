@@ -3,55 +3,133 @@
   padding: 0;
 }
 body {
-  background-image: url('bgimg.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
 }
-.banner {
-  padding: 0.5rem 1.5rem;
+#panel-col,
+#detail-col {
+  padding-bottom: 20px;
 }
-#panel {
-  float: left;
-  width: 60%;
-  height: 100vh;
-  overflow-y: scroll;
-  padding: 5px 10px;
-  border-right: 2px dotted gray;
+.panel {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
-.tail {
-  width: 100%;
-  text-align: right;
-  line-height: 1rem;
-  font-size: 12px;
-  margin: 1rem;
-}
-#detail {
-  float: right;
-  width: 40%;
-  padding: 5px 10px;
-}
-.templates {
-  margin: 10px;
+.panel .panel-heading {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   padding: 15px;
-  border: 1px dotted gray;
+  font-weight: bold;
 }
-span.hint {
-  font-style: italic;
-  display: block;
-  margin-bottom: 7px;
+#main-panel {
+  min-height: 400px;
 }
-.output {
-  width: 100%;
-  resize: none;
+#暂存表 {
+  margin-bottom: 0;
+}
+#暂存表 thead th {
+  border-bottom: 2px solid #ddd;
+  background-color: #f9f9f9;
+}
+#暂存表 tbody tr {
+  transition: background-color 0.2s;
+}
+#暂存表 tbody tr td {
+  vertical-align: middle;
+}
+#暂存表 tbody tr:hover {
+  background-color: #f5f5f5;
+}
+.btn-xs {
+  margin: 0 2px;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.drag-handle {
+  display: inline-block;
+  cursor: move;
+  user-select: none;
+  color: #aaa;
+  margin-left: 5px;
+  padding: 2px 5px;
+}
+.drag-handle:hover {
+  color: #333;
+  background-color: #eee;
+  border-radius: 3px;
+}
+.dragging {
+  opacity: 0.5;
+  background: #fffbe6 !important;
+  border-left: 3px solid #f0ad4e;
+}
+.drag-over {
+  border-top: 2px solid #337ab7;
+}
+.btns .btn {
+  margin: 3px;
+  min-width: 80px;
+  transition: all 0.2s;
+}
+.btns .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btns .btn.active {
+  background-color: #337ab7;
+  color: white;
+  border-color: #2e6da4;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .myTemplateRoot {
-  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+.myTemplateRoot .hint {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px;
+  background-color: #d9edf7;
+  color: #31708f;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
 }
 .myTemplateRoot .myInputGroup {
-  margin: 0.5rem 0;
+  margin-bottom: 10px;
   width: 100%;
 }
+.myTemplateRoot .myInputGroup span {
+  display: inline-block;
+  min-width: 60px;
+  font-weight: normal;
+  color: #666;
+}
+.myTemplateRoot .myInputGroup .form-control {
+  border-radius: 4px;
+}
+.myTemplateRoot .myInputGroup .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
 .myTemplateRoot .myOKBtn {
-  margin-top: 1rem;
+  width: 48%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+#模板占位符 {
+  padding: 40px 0;
+  color: #ccc;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
